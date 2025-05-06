@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1746528250 source:c:\users\almar\onedrive\documents\1ero de ingenieria biomedica\calculadora geometrica\practica\funciones.c
+	<stdio.h>
+	<math.h>
+	"funciones.h"
+
+1746219160 c:\users\almar\onedrive\documents\1ero de ingenieria biomedica\calculadora geometrica\practica\funciones.h
+
+1746527244 source:c:\users\almar\onedrive\documents\1ero de ingenieria biomedica\calculadora geometrica\practica\menu.c
+	<stdio.h>
+	"funciones.h"
+
