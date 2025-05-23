@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "interfaz.h"
+#include "formas_geometricas.h"
 
 int printmenu() {
     int opcion = 0;
@@ -20,38 +23,30 @@ int printmenu() {
     return opcion;
 }
 
-extern void solicitarDatosCirculo (float *radio, float * datos.circulo.x, float * datos.circulo.y){
-
-printf("\n Por favor, introduzca el radio del circulo:")
-scanf ("%f", &radio)
-printf("Centro (x y): ");
-        scanf("%lf %lf", &datos.circulo.x, &datos.circulo.y);
-        }
-
-extern void solicitarDatosRectangulo (float * largo, float * ancho, float * datos.rectangulo.x, float * datos.rectangulo.y){
-printf ("Por favor, introduzca el largo del rectangulo:";
-scanf ("%f", &largo)
-printf ("Por favor, introduzca el ancho del rectangulo:";
-scanf ("%f", &ancho)
-
-printf("Vertice inf izq (x y): ");
-        scanf("%lf %lf", &datos.rectangulo.x, &datos.rectangulo.y);
+extern void solicitarDatosCirculo(float *radio, float *centroX, float *centroY) {
+    printf("\nPor favor, introduzca el radio del circulo: ");
+    scanf("%f", radio);
+    printf("Centro (x y): ");
+    scanf("%f %f", centroX, centroY);
 }
 
+extern void solicitarDatosRectangulo(float *largo, float *ancho) {
+    printf("Por favor, introduzca el largo del rectangulo: ");
+    scanf("%f", largo);
+    printf("Por favor, introduzca el ancho del rectangulo: ");
+    scanf("%f", ancho);
+}
 
-extern void solicitarPuntosCoordenadas (double x1, double y1, double x2, double y2){
-printf("\nPor favor introduzca el valor x de la primera coordenada: ");
-    scanf("%lf", &x1);
-
+extern void solicitarPuntosCoordenadas(double *x1, double *y1, double *x2, double *y2) {
+    printf("\nPor favor introduzca el valor x de la primera coordenada: ");
+    scanf("%lf", x1);
     printf("\nPor favor introduzca el valor y de la primera coordenada: ");
-    scanf("%lf", &y1);
-
+    scanf("%lf", y1);
     printf("\nPor favor introduzca el valor x de la segunda coordenada: ");
-    scanf("%lf", &x2);
-
+    scanf("%lf", x2);
     printf("\nPor favor introduzca el valor y de la segunda coordenada: ");
-    scanf("%lf", &y2);}
-
+    scanf("%lf", y2);
+}
 
 void mostrar_forma() {
     int i;
@@ -68,10 +63,10 @@ void mostrar_forma_por_indice(int i) {
 
     if (memoria[i].tipo == CIRCULO) {
         printf("CIRCULO (Centro: (%.2f, %.2f), Radio: %.2f)\n",
-               memoria[i].datos.circulo.x, memoria[i].datos.circulo.y, memoria[i].datos.circulo.radio);
+               memoria[i].datos.circulo.centro.x, memoria[i].datos.circulo.centro.y, memoria[i].datos.circulo.radio);
     } else {
         printf("RECTANGULO (Vertice inf izq: (%.2f, %.2f), Ancho: %.2f, Alto: %.2f)\n",
-               memoria[i].datos.rectangulo.x, memoria[i].datos.rectangulo.y,
+               memoria[i].datos.rectangulo.vertice_inferior_izquierdo.x, memoria[i].datos.rectangulo.vertice_inferior_izquierdo.y,
                memoria[i].datos.rectangulo.ancho, memoria[i].datos.rectangulo.alto);
     }
 }
